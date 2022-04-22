@@ -1,19 +1,40 @@
-<div class='banner'>
-  <h1>Banner</h1>
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+
+    <p>Simple Airbnb</p>
+    <%= link_to "Add a flat", "flats/new", class: "nav-link btn btn-outline-primary" %>
+
+
+  </div>
 </div>
 <div class='container'>
   <h1>All our flats (<%= @flats.count  %>)</h1>
-  <ul class = 'list-inline'>
-
-    <% @flats.each do |flat| %>
-    <li class= 'list-inline-item' >
-      <div class='card'>
-
-          <h3><%=flat.name%></h3>
-
-      </div>
-    </li>
-    <% end%>
-
-  </ul>
+  <div class='flexbox'>
+    <ul class = 'list-in-line'>
+      <% @flats.each do |flat| %>
+      <li  class='list-inline-item'>
+        <div class='card-flat'>
+          <img src ="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class='card-flat-infos'>
+          <div>
+            <h2><%=flat.name%></h2>
+          </div>
+          <p><%= flat.description %></p>
+          <p><%= flat.price_per_night %></p> <p> €</p>
+          <p><%= flat.number_of_guests %></p>
+          </div>
+        </div>
+      </li>
+      <% end%>
+    </ul>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="https://picsum.photos/200/300" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
 </div>
